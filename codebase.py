@@ -27,7 +27,7 @@ class CustomDataset(Dataset):
         image_name = self.image_names.iloc[idx]
         label = self.labels.iloc[idx]
         label = torch.tensor(label.values, dtype=torch.float32)
-        image = Image.open('drive/MyDrive/Konspektid Magister/Semester 1./Masinõpe/Project/Blinker detector/balanced_images/' + image_name)
+        image = Image.open('/filepath to images/' + image_name)
         if self.transform:
             image = self.transform(image)
         return image, label
