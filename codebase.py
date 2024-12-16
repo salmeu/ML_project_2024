@@ -118,7 +118,7 @@ def evaluate_model(model, dataloader, threshold=0.5, device="cpu"):
 
     return all_predictions, all_labels
 
-# Evaluate the model and visualize results
+# Predict and evaluate the model
 predictions, labels = evaluate_model(model, test_dataloader, threshold=0.5, device=device)
 
 #Visualizing multi-class confusion matrix
