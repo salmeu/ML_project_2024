@@ -87,7 +87,7 @@ def calculate_accuracy(real_labels, predicted_labels):
   R_accuracy = accuracy_score(real_labels[:, 2], predicted_labels[:, 2])
   return L_accuracy, B_accuracy, R_accuracy
 
-def evaluate_model_with_visualization(model, dataloader, threshold=0.5, device="cpu"):
+def evaluate_model(model, dataloader, threshold=0.5, device="cpu"):
     model.to(device)
     model.eval()  # Set the model to evaluation mode
     all_predictions = []
@@ -119,7 +119,7 @@ def evaluate_model_with_visualization(model, dataloader, threshold=0.5, device="
     return all_predictions, all_labels
 
 # Evaluate the model and visualize results
-predictions, labels = evaluate_model_with_visualization(model, test_dataloader, threshold=0.5, device=device)
+predictions, labels = evaluate_model(model, test_dataloader, threshold=0.5, device=device)
 
 #Visualizing multi-class confusion matrix
 def confusion_matrix(labels, predictions):
